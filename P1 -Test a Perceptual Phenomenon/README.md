@@ -70,3 +70,33 @@ do not match. The result confirms my expectations and provides proof to the expe
 The brain has an image association between the shape of the word and the color. When there is a false match or mismatch, additional time is necessary for the prefrontal cortex to process the information and decide on its meaning.
 
 A similar effect would likely be observed if the participants were shown words of the correct color but the wrong text. My thoughts on the matter, however, is that the difference would be less pronounced as I would expect the visual color representation to be more ingrained in the brain that word shape associations.
+
+Additional Information (here for easy accessibility for the reviewer):
+
+Since the sample subjects are the same between the Congruent and Incongruent test, the test that will be performed is a repeated measures, dependent two-condition t-test. This test is appropriate for the following reasons:
+• There is a limited number of samples in each group. T-test is recommended for samples less than 30.
+This data set contains only 24 observations.
+• The population standard deviation is not known for either group. If it were known then the z-test
+would be a more appropriate test.
+• The author is assuming that both samples are approximatly normally distributed and that the variance
+of the samples are not different (“Z-test and t-test,” n.d.).
+The dependent variable is the time it takes to complete a test. The independent variable is the type of
+test, either Congruent or Incongruent.
+
+The point of the project is to determine if there is a statistical significance in the difference in the population mean times to perform the Congruent test (µC ) and the Incongruent test (µI ). Therefore, the null hypothesis is that there will not be a difference in the population mean times µC and µI or that µI will be less than
+µC . The alternative hypothesis is that the µI will be greater than µC . These hypotheses can be expressed mathematically as:
+
+
+H0 : µc ≥ µi
+
+
+The t-statistic of −8.021 is far less than the t-critical value of −1.714 (see above) so the null hypothesis
+is rejected. This means that there is a statistically significate difference between the population mean times
+for the Congruent and Incongruent tests.
+
+Since the alternate hypothesis is that the mean of the times for the Congruent test would be less than the
+mean for the times of the Incongruent tests, this is a one-tailed t-test. The confidence interval will have a
+lower bound with an upper bound of infinity.
+
+The Cohen’s d effect size gives the difference in the two test’s mean times in terms of standard deviation.
+The difference in the two test’s means is −1.637 standard deviations.
