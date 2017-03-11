@@ -7,12 +7,6 @@ In this project, I conduct exploratory data analysis on the 2016 presidential ca
 
 **Format:** [Data Dictionary at fec.gov](ftp://ftp.fec.gov/FEC/Presidential_Map/2016/DATA_DICTIONARIES/CONTRIBUTOR_FORMAT.txt)
 
-##Detailed analysis
-
-[EDA of Hillary 2016 Contributions](https://cdn.rawgit.com/seifip/udacity-data-analyst-nanodegree/master/P4%20-%20Explore%20and%20Summarize%20Data/hillary_2015-contribs.html)
-
-*Also see Knittr `hillary_2015-contribs.Rmd` in the repository.*
-
 ##Final plots and summary
 
 Exploratory Data Analysis of the Hillary Rodham Clinton 2016 campaign from April to July 2016 identified several avenues for further investigation.
@@ -26,8 +20,6 @@ The average contributions to the campaign differ substantially across occupation
 The retired, unemployed, professors and physicians all have very low median contributions, with some outliers in the $2000-2700 range.
 
 CEOs, homemakers and presidents have a median equal to the contribution limit. Attorneys, lawyers, and consultants do not make high median contributions but there is very significant variance. This is likely because some of these contributors are employed by major law and consulting firms who may even endorse and cover their contributions, whereas others are part of a smaller partnership and cover the contribution out of pocket.
-
-The variance may also be indicative of the U-shaped [distribution of salaries in the legal professions](http://qph.is.quoracdn.net/main-qimg-0a0d8f37efe16a83e4f1208aea3b1988?convert_to_webp=true).
 
 ###2. Contributions by employer (nationwide)
 
