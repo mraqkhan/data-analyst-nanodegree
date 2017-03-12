@@ -1,7 +1,7 @@
 ---
-title: "Hillary 2016 Contributions"
-author: "Philip Seifi"
-date: "July 20, 2015"
+title: "Hillary 2016 Election"
+author: "James Gallagher"
+date: "March 12 2017"
 output: html_document
 ---
 
