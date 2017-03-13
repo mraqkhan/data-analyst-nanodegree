@@ -1,4 +1,7 @@
-## Data Visualization: Titanic Data Visualization by Aakarsh Goel
+## Data Visualization: Titanic Data Visualization
+
+by James Gallagher
+P5 of Data Analyst Nanodegree - Udacity
 
 ### Summary
 
