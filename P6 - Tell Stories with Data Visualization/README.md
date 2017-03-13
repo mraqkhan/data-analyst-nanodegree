@@ -1,15 +1,12 @@
-## Data Visualization: Titanic Data Visualization by Aakarsh Goel
+## Data Visualization: Titanic Data Visualization
+
+by James Gallagher: P6 of Udacity Nanodegree (Data Analyst)
 
 ### Summary
 
 Contains demographics and passenger information from 891 of the 2224 passengers and crew on board the Titanic. survival : Survival (0 = No; 1 = Yes) class : Passenger Class (1 = 1st; 2 = 2nd; 3 = 3rd)
 
 ### Design
-
-####  Data Analysis and Cleaning (Pandas)
-
-I have already investigated the titanic dataset earlier in project 2 using pandas so from that I found that Age field has some null values which I cleaned it by replacing null values of Age with N/A field and distributed Age in group of 15 for better visualisation further.
-
 
 #### Data Visualization (dimple.js)
 
