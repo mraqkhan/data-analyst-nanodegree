@@ -1,7 +1,4 @@
-## Data Visualization: Titanic Data Visualization
-
-by James Gallagher
-P5 of Data Analyst Nanodegree - Udacity
+## Data Visualization: Titanic Data Visualization by Aakarsh Goel
 
 ### Summary
 
@@ -29,6 +26,20 @@ This visualization depicts that in all type of passenger classes female gender s
 ![Second Chart](data/init2.png)
 
 This visualization depicts that in mostly young age group survived and children b/w 0-15 were saved first.
+
+### Pre-interview Analysis
+
+Interview #1
+
+Your chart was a bit less informative as survival ratio just shows upto one decimal place. It should be atleast upto two decimal places. Also try to order your x part properly arranged in numerical sequence order. The insights is not so much of a surprise and if you just create a small tweak in the legend, x-axis & y-axis then this would looks good....
+
+Interview #2
+
+The chart is interactive, that's nice. But why the class is ordered as 1,3,2 in both the charts try to order the x-axis and I think the chart will look much better. Broadly speaking, the chart looks intuitive & only needs a few small tweaks. Nice work!!!
+
+Interview #3
+
+The overall representation is good. You should also show visualization just on the basis of survival rate with class as it appears to be the most correlated feature with survival rate.. Also try to use sequential colour pallete in visualization 2.
 
 ### Post-change Visualizations
 
