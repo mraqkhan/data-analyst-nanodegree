@@ -11,7 +11,7 @@ This repository contains my work for Udacity's Data Analyst Nanodegree program, 
 * *Project 4:* [Explore and Summarize Data](https://github.com/James-Gallagher/data-analyst-nanodegree/tree/master/P4%20-%20Explore%20and%20Summarize%20Data)
 * *Project 5:* [Identification of Fraud in Enron Emails](https://github.com/James-Gallagher/data-analyst-nanodegree/tree/master/P5 - Identifying Fraud from Enron Emails and Financial Data)
 * *Project 6:* [Make Effective Data Visualization](https://github.com/James-Gallagher/data-analyst-nanodegree/tree/master/P6 - Make Effective Data Visualization)
-* *Project 7:* [Design an A/B Test](https://github.com/James-Gallagher/data-analyst-nanodegree/tree/master/P7 - Design an A/B Test)
+* *Project 7:* [Design and Analyze an A-B Test](https://github.com/James-Gallagher/data-analyst-nanodegree/tree/master/P7 - Design and Analyze an A-B Test)
 
 ##Courses taken:
 * Descriptive Statistics
