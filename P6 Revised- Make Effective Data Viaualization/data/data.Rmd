@@ -1,0 +1,101 @@
+---
+title: "Exploratory Data Analysis & Clean Up Of Flight Data"
+author: "Harshit Trivedi"
+date: "4 July 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## About
+
+This data set contains information on United States airline flight delays and performance. The dataset includes all domestic flights from all carriers to/from major airports from June, 2003 through May, 2013.
+
+## Load And Inspect Data
+```{r load_data, results='hide', warning=FALSE}
+df <- read.csv('data.csv')
+str(df)
+summary(df)
+head(df)
+```
+
+## Clean Up Data
+```{r cleanup, results='hide', warning=FALSE}
+library(dplyr)
+# clean up date
+df$date <- as.Date(paste(df$year, df$X.month, 1, sep='-'), format="%Y-%m-%d")
+summary(df$date)
+
+nrow(table(df$carrier))
+
+# make a new summary table
+ef <- df %>%
+  group_by(date, year, carrier_name) %>%
+  summarize(arrivals = sum(arr_flights),
+            delayed = sum(arr_del15),
+            cancelled = sum(arr_cancelled),
+            diverted = sum(arr_diverted)) %>%
+  transform(on_time = 1 - delayed/arrivals)
+
+# stash NA values
+ef <- ef[complete.cases(ef),]
+```
+
+## Exploratory Plots
+```{r plot1, warning=FALSE}
+library(ggplot2)
+
+ggplot(data = ef,
+       aes(x = date, y = on_time)) +
+  geom_line(aes(color = carrier_name))
+```
+
+## Find Airlines To Subset Data
+```{r subset}
+# aggregate by carrier name
+agg <- ef %>%
+  group_by(carrier_name) %>%
+  summarize(monthly_avg = mean(arrivals),
+            arrivals = sum(arrivals))
+
+# pull 75th percentile, by monthly average arrivals
+selected_carriers <- subset(agg, monthly_avg >= quantile(monthly_avg, 0.81))$carrier_name
+selected_carriers
+```
+
+## Reshape Data
+```{r reshape}
+ff <- subset(ef, is.element(carrier_name, selected_carriers)) %>%
+  group_by(year, carrier_name) %>%
+  summarize(arrivals = sum(arrivals),
+            delayed = sum(delayed),
+            cancelled = sum(cancelled),
+            diverted = sum(diverted)) %>%
+  transform(on_time = 1 - delayed/arrivals)
+ff <- ff[complete.cases(ff),]
+```
+
+## Replot
+```{r plot2, warning=FALSE}
+summary(df$year)
+
+library(gridExtra)
+p1 <- ggplot(data = ff,
+       aes(x = year, y = on_time)) +
+  geom_line(aes(color = carrier_name)) +
+  scale_x_continuous(limits=c(2003, 2013), breaks=c(2003:2013))
+
+p2 <- ggplot(data = ff,
+       aes(x = year, y = arrivals)) +
+  geom_line(aes(color = carrier_name)) +
+  scale_x_continuous(limits=c(2003, 2013), breaks=c(2003:2013))
+
+grid.arrange(p1, p2, ncol=1)
+```
+
+## Export New CSV
+```{r file}
+write.csv(ff, file="final-data.csv", row.names=FALSE)
+```
