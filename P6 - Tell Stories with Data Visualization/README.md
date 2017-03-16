@@ -1,4 +1,4 @@
-## Data Visualization: Titanic Data Visualization by Aakarsh Goel
+## Data Visualization: Titanic Data Visualization by James Gallagher
 
 ### Summary
 
