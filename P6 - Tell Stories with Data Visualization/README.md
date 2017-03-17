@@ -1,4 +1,4 @@
-## Data Visualization: Titanic Data Visualization by James Gallagher
+## Analysis of passengers, focusing on classes, age and more onboard the Titanic by James Gallagher
 
 ### Summary
 
