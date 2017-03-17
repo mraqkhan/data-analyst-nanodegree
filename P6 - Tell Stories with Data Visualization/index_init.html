@@ -53,6 +53,13 @@
 			    chart.addMeasureAxis("y", "Survived");
 			    var mySeries= chart.addSeries("Age Group",dimple.plot.bar);
 			    mySeries.aggregate = dimple.aggregateMethod.avg;
+                chart.defaultColors = [
+    new dimple.color("#5e642c"), // Set a red fill with a blue stroke
+    new dimple.color("#00FF00"), // Set a green fill with a darker green stroke
+    new dimple.color("#aa6bd7"), // Set a blue fill with a darker blue stroke
+                    new dimple.color("rgb(0, 0, 255)"), // Set a red fill with a blue stroke
+    new dimple.color("#00FF00"), // Set a green fill with a darker green stroke
+]; 
 			    chart.addLegend(65, 10, 510, 20, "right");
 				chart.draw();
 			});	

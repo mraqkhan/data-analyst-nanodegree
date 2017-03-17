@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Titanic Data Exploration</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
       <!--Chart Stylesheets (for design) with Bootstrap for alignment etc above.-->
     <style>
       h2,h4,#chart1,#chart2,#chart3,p{
@@ -15,7 +15,7 @@
 
 <body class="container">
     <!--This segment shows general information and descriptions of the yielded chart.-->
-	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://dimplejs.org/dist/dimple.v1.1.2.min.js"></script>
 	<div class="row">
 		<div id="chart1"></div>
@@ -52,13 +52,15 @@
 		    
 		    d3.select("#chart1").html("<br/><br/>").append("h4").text("Proportionate passengers survived by Passenger's class");
 		    var svg1 = dimple.newSvg("#chart1", width, height);
-		    d3.csv("https://github.com/James-Gallagher/data-analyst-nanodegree/blob/master/P6%20-%20Tell%20Stories%20with%20Data%20Visualization/data/data.csv", function(data){
+		    d3.csv("data/data.csv", function(data){
 				var chart = new dimple.chart(svg1, data);
 			    x=chart.addCategoryAxis("x", "Class");
 			    x.addOrderRule("Class", false);
 			    y=chart.addMeasureAxis("y", "Survived");
 			    y.tickFormat = ',.2f';
 			    y.overrideMax = 1.0;
+                chart.defaultColors = [
+    new dimple.color("#008080")]
 			    var mySeries=chart.addSeries(null, dimple.plot.bar);
 			    mySeries.aggregate = dimple.aggregateMethod.avg;
 				chart.draw();
@@ -68,7 +70,7 @@
 
 		    d3.select("#chart2").html("<br/><br/>").append("h4").text("Proportionate passengers survived by gender and class");
 		    var svg2 = dimple.newSvg("#chart2", width, height);
-		    d3.csv("https://github.com/James-Gallagher/data-analyst-nanodegree/blob/master/P6%20-%20Tell%20Stories%20with%20Data%20Visualization/data/data.csv", function(data){
+		    d3.csv("data/data.csv", function(data){
 				var chart = new dimple.chart(svg2, data);
 			    x=chart.addCategoryAxis("x", ["Class","Sex"]);
 			    x.addOrderRule("Class", false);
@@ -84,12 +86,19 @@
 
 		    d3.select("#chart3").html("<br/><br/>").append("h4").text("Proportionate passengers survived by age group and class");
 		    var svg3 = dimple.newSvg("#chart3", width, height);
-		    d3.csv("https://github.com/James-Gallagher/data-analyst-nanodegree/blob/master/P6%20-%20Tell%20Stories%20with%20Data%20Visualization/data/data.csv", function(data){
+		    d3.csv("data/data.csv", function(data){
 				var chart = new dimple.chart(svg3, data);
 		    	x = chart.addCategoryAxis("x", ["Class","Age Group"]);
 		    	x.addOrderRule("Class", false);
 		    	y=chart.addMeasureAxis("y", "Survived");
 		    	y.tickFormat = ',.2f';
+                chart.defaultColors = [
+    new dimple.color("#5e642c"), // Set a red fill with a blue stroke
+    new dimple.color("#00FF00"), // Set a green fill with a darker green stroke
+    new dimple.color("#aa6bd7"), // Set a blue fill with a darker blue stroke
+                    new dimple.color("rgb(0, 0, 255)"), // Set a red fill with a blue stroke
+    new dimple.color("#00FF00"), // Set a green fill with a darker green stroke
+]; 
 		    	var mySeries= chart.addSeries("Age Group",dimple.plot.bar);
 		    	mySeries.aggregate = dimple.aggregateMethod.avg;
 		    	chart.addLegend(65, 10, 510, 20, "right");
